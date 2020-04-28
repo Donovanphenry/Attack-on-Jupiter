@@ -453,15 +453,15 @@ public class GameEngine
 	       	 creditPane.getChildren().add(backgroundCredits);
 	       	
 	       	 //made 2 labels for names due to formatting issues
-	       	 Label names1 = new Label("Shant"+"\n"+"Zak"+"\n"+"Ryoto"+"\n");
+	       	 /*Label names1 = new Label("Shant"+"\n"+"Zak"+"\n"+"Ryoto"+"\n");
 	       	 names1.setOpacity(.5);
 	       	 names1.setTextFill(Color.CYAN);
 	       	 names1.setFont(CreditFont);
 	       	 names1.setLayoutX(primaryScreenBounds.getWidth() / 2);
 	       	 names1.setLayoutY(primaryScreenBounds.getHeight() * 0.52);
-	       	 creditPane.getChildren().add(names1);
+	       	 creditPane.getChildren().add(names1);*/
 	       	 
-	       	 Label names = new Label("Alex"+"\n"+"Ayato"+"\n"+"Apurav"+"\n"+"Donovan");
+	       	 Label names = new Label("Maria" + "\n" + "Ayato" + "\n" + "Apurav" + "\n" + "Donovan");
 	       	 names.setOpacity(.5);
 	       	 names.setTextFill(Color.MEDIUMSLATEBLUE);
 	       	 names.setFont(CreditFont);
