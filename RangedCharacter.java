@@ -57,7 +57,7 @@ public class RangedCharacter extends Character
 		
 		healthBar.setFill(Color.LIGHTGREY);
 		healthBar.setX(primaryScreenBounds.getWidth() - healthBar.getWidth());
-   	 	healthBar.setY(healthBar.getHeight());
+   	 	healthBar.setY(primaryScreenBounds.getHeight() * .04472);
    	 	healthBar.setOpacity(.5);
    	 	healthBar.setStroke(Color.BLACK);
 	}	
