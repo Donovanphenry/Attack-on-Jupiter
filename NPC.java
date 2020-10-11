@@ -98,7 +98,7 @@ public class NPC extends Character
 		healthBar.setWidth(180);
 		healthBar.setFill(Color.YELLOWGREEN);
 		healthBar.setX(0);
-   	 	healthBar.setY(healthBar.getHeight());
+   	 	healthBar.setY(primaryScreenBounds.getHeight() * .04472);
    	 	healthBar.setOpacity(.5);
    	 	healthBar.setStroke(Color.BLACK);
    	 	
