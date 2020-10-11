@@ -72,7 +72,6 @@ public class GameEngine
     	 enemy = new NPC(levelNum);
     	 lisa.setMissionLevel(levelNum);
     	 lisa.getHealthBar().setFill(Color.SPRINGGREEN);
-    	 levelNum++;
     	   	 
     	 //Setting enemies
     	 lisa.setEnemy(enemy);
@@ -84,18 +83,18 @@ public class GameEngine
     	 lisaHealthBar.setTextFill(Color.YELLOWGREEN);
     	 lisaHealthBar.setFont(creditFont);
     	 lisaHealthBar.setLayoutX(enemy.getHealthBar().getX() * .78);
-    	 lisaHealthBar.setLayoutY(enemy.getHealthBar().getY() - enemy.getHealthBar().getHeight());
+    	 lisaHealthBar.setLayoutY(0);
     	 
     	 Label enemyHealthBar = new Label("Poison Ivy's Health:");
     	 //enemyHealthBar.setOpacity(.7);
     	 enemyHealthBar.setTextFill(Color.SPRINGGREEN);
     	 enemyHealthBar.setFont(creditFont);
-    	 enemyHealthBar.setLayoutX(lisa.getHealthBar().getX() * .98);
-    	 enemyHealthBar.setLayoutY(lisa.getHealthBar().getY() - lisa.getHealthBar().getY());
+    	 enemyHealthBar.setLayoutX(lisa.getHealthBar().getX() * .91);
+    	 enemyHealthBar.setLayoutY(0);
     	 
          //Add character and ground to game
          gamePane.getChildren().addAll(background, lisa.getHealthBar(), enemy.getHealthBar(), lisaHealthBar,
-        		 enemyHealthBar, lisa, enemy, ground);
+        		 enemyHealthBar, lisa, ground);
 
          //Create game scene
          gameScene = new Scene(gamePane, primaryScreenBounds.getWidth(), primaryScreenBounds.getHeight());
@@ -132,11 +131,11 @@ public class GameEngine
     	 gamePane.getChildren().clear();
     	 
     	 //Initializing fighters
+    	 levelNum = 2;
     	 lisa = new RangedCharacter(levelNum);
     	 enemy = new NPC(levelNum);
-    	 lisa.setMissionLevel(2);
+    	 lisa.setMissionLevel(levelNum);
     	 lisa.getHealthBar().setFill(Color.CRIMSON);
-    	 levelNum++;
     	 
     	 //Setting enemies
     	 lisa.setEnemy(enemy);
@@ -148,7 +147,7 @@ public class GameEngine
     	 lisaHealthBar.setTextFill(Color.YELLOWGREEN);
     	 lisaHealthBar.setFont(creditFont);
     	 lisaHealthBar.setLayoutX(enemy.getHealthBar().getX() * .78);
-    	 lisaHealthBar.setLayoutY(enemy.getHealthBar().getY() - enemy.getHealthBar().getHeight());
+    	 lisaHealthBar.setLayoutY(0);
     	 
     	 Label enemyHealthBar = new Label("Gunslinger's Health:");
     	 //enemyHealthBar.setOpacity(.7);
@@ -194,10 +193,11 @@ public class GameEngine
     	 gamePane.getChildren().clear();
     	 
     	 //Initializing fighters
+    	 levelNum = 3;
     	 lisa = new RangedCharacter(levelNum);
     	 enemy = new NPC(levelNum);
-    	 enemy.setBossLevel(3);
-    	 lisa.setMissionLevel(3);
+    	 enemy.setBossLevel(levelNum);
+    	 lisa.setMissionLevel(levelNum);
     	
     	 //Setting enemies
     	 lisa.setEnemy(enemy);
@@ -209,7 +209,7 @@ public class GameEngine
     	 lisaHealthBar.setTextFill(Color.YELLOWGREEN);
     	 lisaHealthBar.setFont(creditFont);
     	 lisaHealthBar.setLayoutX(enemy.getHealthBar().getX() * .78);
-    	 lisaHealthBar.setLayoutY(enemy.getHealthBar().getY() - enemy.getHealthBar().getHeight());
+    	 lisaHealthBar.setLayoutY(0);
     	 
     	 Label enemyHealthBar = new Label("Metal META Man's Health:");
     	 //enemyHealthBar.setOpacity(.7);
@@ -235,7 +235,7 @@ public class GameEngine
          lisa.setGame(this);
          enemy.setGame(this);
          
-         //Set keybindings
+         //Set key-bindings
          keyListener();
          
          //Start the game loop
@@ -272,8 +272,8 @@ public class GameEngine
          btnMenu.setFont(font);
          btnMenu.setOpacity(.7);
          btnMenu.setTextFill(Color.DARKORANGE);
-         btnMenu.setLayoutX(primaryScreenBounds.getWidth() * .348);
-         btnMenu.setLayoutY(primaryScreenBounds.getHeight() * .87);
+         btnMenu.setLayoutX(primaryScreenBounds.getWidth() * .4);
+         btnMenu.setLayoutY(primaryScreenBounds.getHeight() * .83);
 
          //yes button for confirming quit
          Button btnQuit = new Button("Quit");
@@ -281,15 +281,15 @@ public class GameEngine
          btnQuit.setFont(font);
          btnQuit.setOpacity(.7);
          btnQuit.setTextFill(Color.DARKORANGE);
-         btnQuit.setLayoutX(primaryScreenBounds.getWidth() * .56);
-         btnQuit.setLayoutY(primaryScreenBounds.getHeight() * .87);
+         btnQuit.setLayoutX(primaryScreenBounds.getWidth() * .47);
+         btnQuit.setLayoutY(primaryScreenBounds.getHeight() * .92);
          
          Label query = new Label("You saved Jupiter!");
          query.setFont(lblFont);
          query.setTextFill(Color.DARKORANGE);
          query.setOpacity(.7);
-         query.setLayoutY(primaryScreenBounds.getHeight() * .75);
-         query.setLayoutX(primaryScreenBounds.getWidth() / 3.3);
+         query.setLayoutY(primaryScreenBounds.getHeight() * .72);
+         query.setLayoutX(primaryScreenBounds.getWidth() * .33);
 
          pane.getChildren().addAll(backgroundCredits, btnQuit, btnMenu, query);
  		 Scene quitScene = new Scene(pane, primaryScreenBounds.getWidth(), primaryScreenBounds.getHeight());
@@ -355,7 +355,7 @@ public class GameEngine
     			 input.remove(code);
         	
     		 if (input.contains("ESCAPE"))
-    			 Main.getStage().setFullScreen(false);
+    			Main.getStage().setFullScreen(false);
     		 
     	 });
     	
@@ -372,7 +372,7 @@ public class GameEngine
     		 }
             
     		 if (input.contains("F12"))
-    			 Main.getStage().setFullScreen(true);
+    			Main.getStage().setFullScreen(true);
             
     		 if(input.contains("P")) 
     		 {
@@ -514,8 +514,8 @@ public class GameEngine
              btnNo.setFont(font);
              btnNo.setOpacity(.7);
              btnNo.setTextFill(Color.DARKORANGE);
-             btnNo.setLayoutX(257);
-             btnNo.setLayoutY(258);
+             btnNo.setLayoutX(257 * 1.3);
+             btnNo.setLayoutY(258 * .92);
 
              //yes button for confirming quit
              Button btnYes = new Button("Yes");
@@ -523,14 +523,14 @@ public class GameEngine
              btnYes.setFont(font);
              btnYes.setOpacity(.7);
              btnYes.setTextFill(Color.DARKORANGE);
-             btnYes.setLayoutX(163);
-             btnYes.setLayoutY(258);
+             btnYes.setLayoutX(163 * .5);
+             btnYes.setLayoutY(258 * .92);
              
              Label query = new Label("Are you sure you want to quit?");
              query.setFont(font);
              query.setTextFill(Color.DARKORANGE);
              query.setOpacity(.7);
-             query.setLayoutY(0);
+             query.setLayoutY(20);
              query.setLayoutX(70);
 
              pane.getChildren().addAll(btnYes, btnNo, query);
